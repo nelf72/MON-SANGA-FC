@@ -1,18 +1,98 @@
 #include<stdio.h>
+void displaymenu(void);
+void summation(void);
+void factorial(void);
+void exponential(void);
+void quit(void);
+
 int main (){
-int i,m,x,result;
+int choice;
+     do{ 
+     displaymenu();
+     printf("welcome to my menu \n ");
+     printf("press a number to test the corresponding function : \n");
+     scanf("%d",&choice);
+     switch(choice){
+           case 1:
+               summation();
+            break;
+            case 2:
+               factorial();  
+            break;
+            case 3:
+               exponential();
+            break;
+            case 4:
+                quit();
+            break ;
+            default:
+                printf("invalid choice please try again : \n") ;   
+           }
+        
+      
+   } while(choice !=4);
+   return 0;
+      }
+      void displaymenu (){
+      printf("welcome to my MENU  \n");
+      printf("press a number to test the corresponding function  :  \n");
+      printf("1.summation (n+i) \n ");
+      printf("2.factorial (n!) \n ");
+      printf("3.exponential (x^m) \n ");
+      printf("4.exit program \n ");
+      }
+      void summation(){
+      int m,i,n,sum;
+   printf("enter n :"); 
+   scanf("%d",&n);
+   printf("enter m :");
+   scanf("%d",&m);
+   if(m<=0){
+   printf("invalid value of m please try again : \n ");
+   }
+   sum=0;
+   for(i=1; i<=m;i++){
+   sum=sum+n+i;
+   }
+   printf("the summation  is %d",sum);
+   
+   
+   }
+      void factorial(){
+    int n, fact = 1, i = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    do {
+        fact *= i;
+        i++;
+    } while (i <= n);
+
+    printf("Factorial of %d is: %d\n", n, fact);
+}
+      
+      void exponential(){
+      int x,m,i,result;
 printf("enter the base :");
 scanf("%d",&x);
 printf("enter the exponentiel : ");
 scanf("%d",&m);
- if(m<=0){
-  result=1/x;
+ if(x=0){
+  printf("please enter another ");
   }
    result=1;
   for(i=0;i<m;i++){
    result=result*x;
    }
    printf("the %d exponentiel %d is %d ",x,m,result);
-   return 0;
    }
-😂😭🚼💔🫂
+   
+   void quit(){
+   void displaymenu();
+   int choice;
+   printf("please do your choice  : \n");
+   scanf("%d",&choice);
+   printf("thanks you for your time  program exit \n");
+   
+   }
+   
